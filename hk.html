@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aventura de Junin</title>
+
+<script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+
+<script>
+function fase1() {
+    var html = '<div class="container fadeIn">';
+    html += '<p> Junin saiu para pescar de madrugada em busca de uma boa pescaria. De repente, uma tempestade forte aparece. O que fazer? </p>';
+    html += '<img src="temp.png" class="fadeIn">';
+    html += '<button onclick="fase2()">Enfrentar a tempestade.</button>';
+    html += '<button onclick="fase3()">Voltar para casa.</button>';
+    html += '</div>';
+    $("body").append(html);
+}
+
+function fase2() {
+    var html = '<div class="container fadeIn">';
+    html += '<p> O barco virou na tempestade e Junin foi parar em uma ilha desconhecida. Para onde olhar? </p>';
+    html += '<img src="caiu na ilha.png" class="fadeIn">';
+    html += '<button onclick="fase4()">Olhar para a esquerda.</button>';
+    html += '<button onclick="fase5()">Olhar para a direita.</button>';
+    html += '</div>';
+    $("body").append(html);
+}
+
+function fase3() {
+    var html = '<div class="container fadeIn">';
+    html += '<p> Junin decidiu voltar para casa e deu uma entrevista sobre a tempestade, tornando-se famoso. FIM.</p>';
+    html += '<img src="repor.png" class="fadeIn">';
+    html += '</div>';
+    $("body").append(html);
+}
+
+function fase4() {
+    var html = '<div class="container fadeIn">';
+    html += '<p> Junin viu uma parte da ilha com a floresta completamente queimada. O que fazer? </p>';
+    html += '<img src="fogo.png" class="fadeIn">';
+    html += '<button onclick="fase6()">Explorar a floresta.</button>';
+    html += '<button onclick="fase7()">Voltar para a praia.</button>';
+    html += '</div>';
+    $("body").append(html);
+}
+
+function fase5() {
+    var html = '<div class="container fadeIn">';
+    html += '<p> Junin encontrou um índio de uma tribo oferecendo ajuda. O que fazer? </p>';
+    html += '<img src="image.png" class="fadeIn">';
+    html += '<button onclick="fase9()">Fugir.</button>';
+    html += '</div>';
+    $("body").append(html);
+}
+
+function fase6() {
+    var html = '<div class="container fadeIn">';
+    html += '<p> Junin explorou a floresta e encontrou uma equipe de resgate. Ele voltou para casa com vida. FIM.</p>';
+    html += '<img src="resgate.png" class="fadeIn">';
+    html += '</div>';
+    $("body").append(html);
+}
+
+function fase7() {
+    var html = '<div class="container fadeIn">';
+    html += '<p> Junin voltou para a praia, mas estava sem comida e água. O que fazer? </p>';
+    html += '<img src="sob.jpeg" class="fadeIn">';
+    html += '<button onclick="fase8()">Buscar comida na floresta.</button>';
+    html += '<button onclick="fase5()">Procurar ajuda na ilha.</button>';
+    html += '</div>';
+    $("body").append(html);
+}
+
+function fase8() {
+    var html = '<div class="container fadeIn">';
+    html += '<p> A tribo acolheu Junin, mas ele teve que escolher entre duas opções. </p>';
+    html += '<img src="carape.jpeg" class="fadeIn">';
+    html += '<button onclick="fase6()">Aceitar as regras da tribo.</button>';
+    html += '<button onclick="fase10()">Seguir pela floresta queimada.</button>';
+    html += '</div>';
+    $("body").append(html);
+}
+
+function fase9() {
+    var html = '<div class="container fadeIn">';
+    html += '<p> Junin tentou fugir, mas foi capturado por outra tribo e teve que escolher entre dois destinos. </p>';
+    html += '<img src="capt.jpeg" class="fadeIn">';
+    html += '<button onclick="fase11()">Escolher "Baguga".</button>';
+    html += '<button onclick="fase12()">Escolher "Morte".</button>';
+    html += '</div>';
+    $("body").append(html);
+}
+
+function fase10() {
+    var html = '<div class="container fadeIn">';
+    html += '<p> Junin seguiu pela floresta e encontrou um grupo de exploradores que o ajudaram a sair da ilha. Ele voltou para casa. FIM.</p>';
+    html += '<img src="explo.png" class="fadeIn">';
+    html += '</div>';
+    $("body").append(html);
+}
+
+function fase11() {
+    var html = '<div class="container fadeIn">';
+    html += '<p> Junin escolheu "Baguga" e foi forçado ao trabalho escravo por anos até morrer sem escapar da ilha.</p>';
+    html += '<img src="catatra.png" class="fadeIn">';
+    html += '</div>';
+    $("body").append(html);
+}
+
+function fase12() {
+    var html = '<div class="container fadeIn">';
+    html += '<p> Junin escolheu "Morte" e foi executado pela tribo. FIM.</p>';
+    html += '<img src="baguga.png" class="fadeIn">';
+    html += '</div>';
+    $("body").append(html);
+}
+</script>
+
+<style>
+body{
+    background-color: black;
+    color: white;
+    font-family: Arial, sans-serif;
+    text-align: center;
+}
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    opacity: 0;
+    animation: fadeIn 1s forwards;
+}
+
+button {
+    background-color: #ff9800;
+    color: white;
+    border: none;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    transform: scale(1.1);
+}
+
+.fadeIn {
+    opacity: 0;
+    animation: fadeIn 2s forwards;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}
+</style>
+
+</head>
+<body>
+
+<div class="container">
+    <h1>Aventura de Junin</h1>
+    <p>Junin saiu para pescar de madrugada, mas uma tempestade mudou seu destino. O que ele fará?</p>
+    <img src="caraindo.png" class="fadeIn">
+    <div class="button">
+        <br>
+        <button onclick="fase1()">Começar a aventura.</button>
+    </div>
+</div>
+
+</body>
+</html>
